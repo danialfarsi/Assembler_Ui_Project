@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Assembler</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+</head>
+
+
+<body>
+
+
+    <!-- navbar -->
+    <nav class="sidebar-navigation">
+        <ul>
+            <a href="#" style="text-decoration: none; color:white">
+                <li class="active">
+                    <i class="far fa-file-alt"></i>
+                    <span class="tooltip">Code</span>
+                </li>
+            </a>
+
+            <a href="info" style="text-decoration: none; color:white">
+                <li>
+                    <i class="fas fa-info-circle"></i>
+                    <span class="tooltip">Info</span>
+                </li>
+            </a>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 ">
+                <div class="card mt-5">
+                    <h4 class="card-header">Code</h4>
+                    <div class="card-body text-center">
+
+
+                        <form id="form-assemble">
+                            <textarea id="text" class="form-control" rows="15" style="text-decoration:none "></textarea>
+                            <!-- <div id="text" contenteditable="true"></div> -->
+                            <div class="form-group">
+                                <input type="submit" id="#submit" value="Assemble" class="btn btn-dark btn-block mt-3">
+                            </div>
+                        </form>
+                        <div class="loading" style="display:none;">
+                            <img src="loading.gif">
+                        </div>
+                        <div class="results mt-2">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 " id="reg-or-memory">
+                <div class="card mt-5 ">
+                    <!-- <h4 class="card-header">Registers</h4> -->
+                    <div class="card-header" id="reg">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#registers"
+                                aria-expanded="true" aria-controls="registers">
+                                Registers
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="registers" class="collapse hide" aria-labelledby="reg" data-parent="#reg-or-memory">
+                        <div class="cart-body p-2">
+                            <div class="registers">
+                                <div class="input-group mb-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">0</span>
+                                    </div>
+                                    <input type="text" class="form-control text-center register" disabled>
+                                    
+                                </div>
+
+                                <div class="input-group  mb-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">1</span>
+                                    </div>
+                                    <input type="text" class="form-control text-center register" disabled>
+                                </div>
+                                <div class="input-group  mb-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">2</span>
+                                    </div>
+                                    <input type="text" class="form-control text-center register" disabled>
+                                </div>
+                                <div class="input-group mb-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">3</span>
+                                    </div>
+                                    <input type="text" class="form-control text-center register" disabled>
+                                </div>
+                                <div class="input-group mb-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">4</span>
+                                    </div>
+                                    <input type="text" class="form-control text-center register" disabled>
+                                </div>
+                                <div class="input-group mb-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">5</span>
+                                    </div>
+                                    <input type="text" class="form-control text-center register" disabled>
+                                </div>
+                                <div class="input-group mb-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">6</span>
+                                    </div>
+                                    <input type="text" class="form-control text-center register" disabled>
+                                </div>
+                                <div class="input-group mb-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">7</span>
+                                    </div>
+                                    <input type="text" class="form-control text-center register" disabled>
+                                </div>
+                                <div class="input-group mb-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">8</span>
+                                    </div>
+                                    <input type="text" class="form-control text-center register" disabled>
+                                </div>
+                                <div class="input-group mb-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">9</span>
+                                    </div>
+                                    <input type="text" class="form-control text-center register" disabled>
+                                </div>
+                                <div class="input-group mb-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">10</span>
+                                    </div>
+                                    <input type="text" class="form-control text-center register" disabled>
+                                </div>
+                                <div class="input-group mb-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">11</span>
+                                    </div>
+                                    <input type="text" class="form-control text-center register" disabled>
+                                </div>
+                                <div class="input-group mb-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">12</span>
+                                    </div>
+                                    <input type="text" class="form-control text-center register" disabled>
+                                </div>
+                                <div class="input-group mb-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">13</span>
+                                    </div>
+                                    <input type="text" class="form-control text-center register" disabled>
+                                </div>
+                                <div class="input-group mb-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">14</span>
+                                    </div>
+                                    <input type="text" class="form-control text-center register" disabled>
+                                </div>
+                                <div class="input-group mb-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">15</span>
+                                    </div>
+                                    <input type="text" class="form-control text-center register" disabled>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card mt-2 mb-5">
+                    <div class="card-header" id="mem">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#memory"
+                                aria-expanded="true" aria-controls="memory">
+                                Memory
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="memory" class="collapse hide" aria-labelledby="mem" data-parent="#reg-or-memory">
+                        <div class="card-body p-2">
+                                <textarea id="mem-value" class="form-control" style="text-decoration:none "rows="15" style="overflow: scroll;font-size: 0.1rem;" disabled></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="preloader">
+            <div class="preloader">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="../javascripts/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="../javascripts/ui.js"></script>
+    <script src="../javascripts/reg.js"></script>
+    <script src="../javascripts/mantegh.js"></script>
+
+
+</body>
+
+</html>
